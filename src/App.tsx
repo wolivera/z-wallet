@@ -1,25 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Home } from './containers/Home';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { indigo } from '@mui/material/colors';
+import { SnackbarNotification } from './components/Snackbar';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: indigo[900],
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <div>
+          <SnackbarNotification />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route element={<Home />} />
+          </Routes>
+        </div>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
