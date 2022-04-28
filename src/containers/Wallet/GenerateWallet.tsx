@@ -52,7 +52,7 @@ export const GenerateWalletModal = ({ open, onClose, onConfirm }: Props) => {
         <Button autoFocus onClick={onClose}>
           Cancel
         </Button>
-        <Button onClick={onConfirm}>Ok</Button>
+        <Button onClick={onConfirm}>Create</Button>
       </DialogActions>
     </Dialog>
   );

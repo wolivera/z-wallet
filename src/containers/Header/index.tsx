@@ -1,5 +1,4 @@
 // type Props = {}
-import Logo from "../../assets/logo2.png";
 import { Body } from "../../components/Content";
 import { NetworkMenu } from "../../components/NetworkMenu";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -15,7 +14,11 @@ export const Header = () => {
   return (
     <Body>
       <div>
-        <img className="h-[50px] rounded-md" alt="Logo" src={Logo} />
+        <h4 className="text-xl font-black text-white text-center">
+          <span className="bg-gradient-to-r text-transparent bg-clip-text from-gray-400 to-blue-500">
+            ZWallet
+          </span>
+        </h4>
       </div>
       <div>
         <NetworkMenu
